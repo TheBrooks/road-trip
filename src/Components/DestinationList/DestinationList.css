@@ -1,0 +1,19 @@
+
+.DestinationList {
+  float: left;
+  font: 1em;
+  width: 50%;
+}
+
+.DestinationList ul{
+  padding-left:0px;
+  margin: 0 10px 0 20px;
+}
+
+.DestinationList ul li {
+  color: black;
+  height: 3em;
+  margin: 3px;
+  background-color: rgba(255,255,255,.75);
+  list-style: none;
+}

@@ -1,0 +1,10 @@
+.DestinationMap-container {
+  float: right;
+  width: 50%;
+}
+
+.DestinationMap-placeholder {
+  margin: 0 20px 0 10px;
+  height: 75vh;
+  background-color: green;
+}

@@ -6,57 +6,6 @@
   font-size: 3em;
 }
 
-/*----- Input -------*/
-
-.App-destination-input {
-  font-size: 30px;
-  padding: 0 2em 0px 1em;
-}
-
-input {
-  width: 100%;
-  border-radius: 99px;
-  padding-left: .5em;
-  font-size: inherit;
-}
-
-input:focus {
-  outline:none;
-}
-
-.rowC {
+#DestinationContainer {
   margin-top: 20px;
-}
-
-/*----- LIST -------*/
-
-.App-destinations-list {
-  float: left;
-  font: 1em;
-  width: 50%;
-}
-
-.App-destinations-list ul{
-  padding-left:0px;
-  margin: 0 20px;
-}
-
-.App-destinations-list ul li {
-  color: black;
-  height: 3em;
-  margin: 3px;
-  background-color: rgba(255,255,255,.75);
-  list-style: none;
-}
-
-/*----- MAP -------*/
-.App-map {
-  float: right;
-  width: 50%;
-}
-
-.App-actual-map {
-  margin: 0 20px;
-  height: 75vh;
-  background-color: green;
 }
