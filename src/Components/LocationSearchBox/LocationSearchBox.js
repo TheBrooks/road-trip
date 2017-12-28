@@ -17,8 +17,8 @@ export default class LocationSearchBox extends React.Component {
 	}
 
 	handleSubmit(event) {
-		alert('a name was submitted: ' + this.state.value);
 		event.preventDefault();
+		this.props.onSubmit(this.state.value);
 		this.setState({value: ''});
 	}
 
