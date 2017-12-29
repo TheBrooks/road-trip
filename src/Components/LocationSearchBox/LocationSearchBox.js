@@ -26,7 +26,11 @@ export default class LocationSearchBox extends React.Component {
 		return( 
 			<div className="LocationSearchBox">
       	<form onSubmit={this.handleSubmit}>
-        	<input type="text" value={this.state.value} onChange={this.handleChange} placeHolder="Enter a destination"/ >
+        	<input 
+        		type="text" 
+        		value={this.state.value} 
+        		onChange={this.handleChange} 
+        		placeholder="Enter a destination"/ >
     	  </form>
     	</div>
     );
