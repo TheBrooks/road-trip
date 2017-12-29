@@ -1,14 +1,6 @@
 
 .LocationSearchBox {
-  font-size: 30px;
-  padding: 0 2em 0px 1em;
-}
-
-.LocationSearchBox input {
-  width: 100%;
-  border-radius: 99px;
-  padding-left: .5em;
-  font-size: inherit;
+  padding: 0 1em 0px 1em;
 }
 
 .LocationSearchBox input:focus {
