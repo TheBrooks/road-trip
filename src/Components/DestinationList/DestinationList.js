@@ -3,7 +3,10 @@ import './DestinationList.css';
 
 export default class DestinationList extends React.Component {
 	render() {
-		const destinationsListItems = this.props.destinations.map((dest) => <li>{dest}</li>);
+		var destinationsListItems;
+		if(this.props.destinations){
+			destinationsListItems = this.props.destinations.map((dest) => <li>{dest.address}</li>);
+		}
 
 		return (
 			<div className="DestinationList">

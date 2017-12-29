@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
+
 import React from 'react';
 import './DestinationMap.css';
 import { compose, withProps } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
-
 
 const MyGoogleMapComponent = compose(
 	withProps({
@@ -13,20 +14,27 @@ const MyGoogleMapComponent = compose(
 	}),
 	withScriptjs,
 	withGoogleMap
-)((props) =>
-	<GoogleMap
-		defaultZoom={8}
-		defaultCenter={{lat: 30.2672, lng: -97.7431}}>
-		{props.isMarkerShown && <Marker position={{ lat: 30.2672, lng: -97.7431 }}/> }
-	</GoogleMap>)
+)((props) => {
+	var markers;
+	if(props.destinations){
+		markers = props.destinations.map((dest, index) => <Marker position={{ lat: dest.lat, lng: dest.lng }} title={dest.address} label={(index+1).toString()}/>); 	
+	}
+
+	return (
+		<GoogleMap
+			defaultZoom={8}
+			defaultCenter={{lat: 30.2672, lng: -97.7431}}>
+			{markers}
+		</GoogleMap>
+		);
+	})
 
 export default class DestinationMap extends React.Component {
 	render() {
 		return (
 			<div className="DestinationMap-container">
 				<div className="DestinationMap-placeholder">
-			
-        	<MyGoogleMapComponent isMarkerShown />
+        	<MyGoogleMapComponent destinations={this.props.destinations}/>
         </div>
     </div>
 		);

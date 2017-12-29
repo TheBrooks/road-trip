@@ -1,6 +1,6 @@
 import React from 'react';
 import './LocationSearchBox.css';
-import PlacesAutocomplete /*, {geocodeByAddress, getLatLng }*/ from 'react-places-autocomplete';
+import PlacesAutocomplete, {geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 export default class LocationSearchBox extends React.Component {
 	constructor(props) {
@@ -19,14 +19,13 @@ export default class LocationSearchBox extends React.Component {
 	}
 
 	handleEnter(address) {
-		/*
-		geocodeByAddress(this.state.address)
-			.then(results => getLatLng(results[0]))
-			.then(latLng => console.log('Success', latLng))
-			.catch(error => console.error('Error', error))
-		*/
-		this.props.onSubmit(this.state.address);
+		let newAddress = this.state.address;
 		this.setState({address: ''});
+
+		geocodeByAddress(newAddress)
+			.then(results => getLatLng(results[0]))
+			.then(latLng => this.props.onSubmit({address:newAddress, lat:latLng.lat, lng:latLng.lng}))
+			.catch(error => console.error('Error', error));
 	}
 
 	handleSubmit(event) {

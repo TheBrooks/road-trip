@@ -28,7 +28,7 @@ class App extends Component {
         <LocationSearchBox onSubmit={this.onSubmit} />
         <div id="DestinationContainer">
           <DestinationList destinations={this.state.destinations}/>
-          <DestinationMap />
+          <DestinationMap destinations={this.state.destinations}/>
         </div>
       </div>
     );
